@@ -17,7 +17,7 @@ class DomainPage(BasePage):
     FORWARD_INPUT = (By.XPATH, "//form//input[contains(@placeholder, 'Forwarding Domain')]")    # updated based on your provided XPath
     SAVE_BTN = (By.XPATH, "//button[.//span[text()='Save']]")
     GENERATED_EMAIL = (By.XPATH, "//div[contains(@class,'email-account')]")
-
+    VIEW_CART_BTN = (By.XPATH, "//div[contains(@class, 'view-cart-btn--icon')]")
     def search_and_add_first_domain(self, domain_name, forwarding_domain="sales.com"):
         try:
             print(f"Entering domain: {domain_name}")
@@ -45,9 +45,17 @@ class DomainPage(BasePage):
             time.sleep(2)
             WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.SAVE_BTN)).click()
             WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(self.GENERATED_EMAIL))
-            print("Staying on page 20s to allow all UI elements to load")
-            time.sleep(20)
+            print("Staying on page 10s to allow all UI elements to load")
+            time.sleep(10)
 
+
+            print("Clicking on 'View Cart' button")
+            WebDriverWait(self.driver, 15).until(
+                EC.element_to_be_clickable(self.VIEW_CART_BTN)
+            ).click()
+            print("Waiting 10 seconds on cart page...")
+            time.sleep(10)
+            print("Cart page wait completed.")
             print("Done: All elements are visible as expected.")
 
         except TimeoutException as e:
