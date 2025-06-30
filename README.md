@@ -21,3 +21,8 @@ App URL: https://pyxis.lifeisgoodforlearner.com
 - Pricing checks ($14/domain, $4/email)
 - Cart summary validations
 
+# BASH
+- python -m pytest Task1_Login_Page/tests/test_login.py --html=Task1_Login_Page/reports/task1_login_report.html --self-contained-html
+- python -m pytest Task2_DomainSearch_EmailGeneration\tests\test_domain_flow.py --html=report.html --self-contained-html
+
+
