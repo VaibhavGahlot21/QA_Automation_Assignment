@@ -16,7 +16,7 @@ App URL: https://pyxis.lifeisgoodforlearner.com
 - Resolution check @ 1366x768
 
 # Task 2 – Domain & Email Flow
-- Domain search & add to cart (N from JSON)
+- Domain search & add to cart  (JSON)
 - Email auto-generation (3/domain)
 - Pricing checks ($14/domain, $4/email)
 - Cart summary validations
